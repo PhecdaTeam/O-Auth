@@ -1,0 +1,40 @@
+mysql:
+    host: localhost
+    user: root
+    port: 3306
+    base: oauth
+    pass: ""
+
+# Prefix
+prefix: "&c&lYour&4&lIP&f&l.EU"
+
+# Welcome messages
+welcome_format: " &c&lA&4&lO &8[&2+&8] &a{PLAYER}"
+quit_format: " &c&lA&4&lO &8[&4-&8] &c{PLAYER}"
+welcome_message: " &f&lWelcome to my server!"
+
+# Auth messages
+login: " &c&lA&4&lO &7» &fLog in /login <password> <captcha>!"
+register: " &c&lA&4&lO &7» &fRegister /register <password> <password> <captcha>"
+changepass: " &c&lA&4&lO &7» &fChange your password : /changepass <old_password> <new_password>"
+registered: " &c&lA&4&lO &7» &fYou have registered correctly!"
+logged: " &c&lA&4&lO &7» &fYou have logged in correctly!"
+passchange: " &c&lA&4&lO &7» &fYou have changed your password correctly!"
+already_registered: " &c&lA&4&lO &7» &fYou are already registered!"
+already_logged: " &c&lA&4&lO &7» &fYou are already logged!"
+not_same_password: " &c&lA&4&lO &7» &fThe passwords given are not the same!"
+invalid_password: " &c&lA&4&lO &7» &fInvalid password!"
+not_logged: " &c&lA&4&lO &7» &fYou must be logged in to do this!"
+changed_pass: " &c&lA&4&lO &7» &fPassword changed correctly!"
+
+# Spawn Location
+Location:
+    X: 0
+    Y: 0
+    Z: 0
+
+# Security setting
+security:
+    captcha: true
+    captcha_message: " &c&lA&4&LO &7>> &9&lYour captcha : &1&l{CAPTCHA}"
+    invalid_captcha: " &c&lA&4&lO &7>> &fInvalid captcha!"

@@ -1,0 +1,12 @@
+main: pl.oucik.auth.OAuth
+name: O-Auth
+author: Out#9999
+version: 1.1.2
+
+commands:
+    register:
+        aliases: [reg]
+    login:
+        aliases: [l]
+    changepassword:
+        aliases: [changepass]
