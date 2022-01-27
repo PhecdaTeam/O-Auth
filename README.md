@@ -1,6 +1,6 @@
 <h1 align="center">O-Auth 🔒</h1>
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.1.2-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.3-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/Java-%3E%3D8.0-blue.svg" />
   <img src="https://img.shields.io/badge/Spigot/Paper-%5E1.8.8%20%7C%7C%20%3E%3D1.8.0-blue.svg" />
   <a href="#" target="_blank">
@@ -10,7 +10,7 @@
 
 
 ## 🏠 [Homepage](https://github.com/PhecdaTeam/O-Auth)
-Latest release: [Click This](https://github.com/PhecdaTeam/O-Auth/releases/tag/1.1.2)
+Latest release: [Click This](https://github.com/PhecdaTeam/O-Auth/releases/tag/1.1.3)
 
 ### Blocked activities before logging in:
 - Destroying blocks
