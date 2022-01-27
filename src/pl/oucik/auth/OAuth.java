@@ -33,18 +33,15 @@ public class OAuth extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        //*------------------------------------------------------------------------------------------*//
         this.saveDefaultConfig();
         (this.config = new Config(this)).load();
-        //*------------------------------------------------------------------------------------------*//
         if ((this.sql = new Database(this)).connect()) {
             this.sql.update("CREATE TABLE IF NOT EXISTS OAuth (id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, name text NOT NULL, password text NOT NULL, lastIP text NOT NULL, registered int(1));");
         }
-        //*------------------------------------------------------------------------------------------*//
         this.getCommand("register").setExecutor(new RegisterCommand(this));
         this.getCommand("login").setExecutor(new LoginCommand(this));
         this.getCommand("changepassword").setExecutor(new ChangepassCommand(this));
-        //*------------------------------------------------------------------------------------------*//
+        this.getServer().getPluginManager().registerEvents(new PlayerChatMessageLisener(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerMoveListener(this), this);
@@ -53,14 +50,11 @@ public class OAuth extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new PlayerInventoryOpenListener(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerBreakBlockListener(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerDamageListener(this), this);
-        //*------------------------------------------------------------------------------------------*//
         (this.userManager = new UserManager(this)).load();
-        //*------------------------------------------------------------------------------------------*//
         this.captchaManager = new CaptchaManager();
         if(this.config.captcha) {
             new CaptchaTask(this).runTaskTimer(this, 40L, 40L);
         }
-        //*------------------------------------------------------------------------------------------*//
     }
 
     @Override

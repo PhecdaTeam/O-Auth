@@ -7,19 +7,16 @@ import java.sql.SQLException;
 
 public class User {
 
-    //*------------------------------------------------------------------------------------------*//
     private final OAuth plugin;
     public User(OAuth plugin, String name) {
         this.plugin = plugin;
         this.name = name;
     }
-    //*------------------------------------------------------------------------------------------*//
     private boolean logged;
     private boolean registered;
     private String lastIP;
     private String password;
     private final String name;
-    //*------------------------------------------------------------------------------------------*//
     public User(OAuth plugin, Player player) {
         this.plugin = plugin;
         this.name = player.getName();
@@ -36,11 +33,9 @@ public class User {
         this.lastIP = rs.getString("lastIP");
         this.registered = rs.getInt("registered") == 1;
     }
-    //*------------------------------------------------------------------------------------------*//
     private void insert(){
         plugin.getSql().update("INSERT INTO OAuth (id, name, password, lastIP, registered) VALUES (NULL, '" + this.name + "', '" + this.password + "', '" + this.lastIP + "', '" + (this.registered ? 1 : 0) +"')");
     }
-    //*------------------------------------------------------------------------------------------*//
     public String getName(){
         return this.name;
     }
@@ -53,7 +48,6 @@ public class User {
     public boolean isRegistered(){
         return registered;
     }
-    //*------------------------------------------------------------------------------------------*//
     public void setPassword(String password) {
         this.password = password;
         plugin.getSql().update("UPDATE OAuth SET password='" + password + "' WHERE name='" + this.getName() + "'");
@@ -67,6 +61,4 @@ public class User {
     public void setLogged(boolean logged1){
         this.logged=logged1;
     }
-    //*------------------------------------------------------------------------------------------*//
-
 }
